@@ -1,8 +1,22 @@
-import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Navbar from './components/Navbar.jsx';
+import { Home, About, Projects, Contact } from './pages/index.js';
+
 
 const App = () => {
     return (
-        <div>App</div>
+        <main className="bg-slate-300/20">
+<Router>
+    <Navbar></Navbar>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/projects" element={<Projects />} />
+    <Route path="/contact" element={<Contact />} />
+  </Routes>
+</Router>
+        </main>
     )
 }
 
